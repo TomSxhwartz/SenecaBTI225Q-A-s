@@ -1,0 +1,168 @@
+/****************************************************************************
+*
+Assignment 2
+*
+I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+*
+No part of this assignment has been copied manually or electronically from any other source
+*
+(including web sites) or distributed to other students.
+*
+Name: Student ID: Date: 
+****************************************************************************/
+// *************** TASK 1 ***************
+// Creating an Object Prototype called coursesInfo
+var coursesInfo = {
+  code: "",
+  name: "",
+  hours: Number,
+  url: ""
+}
+//Creating 5 variables and setting them to the Object Prototype coursesInfo
+var APC100 = Object.create(coursesInfo);
+var IPC144 = Object.create(coursesInfo);
+var ULI101 = Object.create(coursesInfo);
+var IOS110 = Object.create(coursesInfo);
+var EAC150 = Object.create(coursesInfo);
+
+// Initializing APC100 with some of the variables in the Object Prototype
+APC100.code = "APC100";
+APC100.name = "Applied professional communication";
+APC100.hours = 3;
+APC100.url = "http:/www.senecacollege.ca";
+
+// Initializing IPC144 with some of the variables in the Object Prototype
+IPC144.code = "IPC144";
+IPC144.name = "Introduction to C programming";
+IPC144.hours = null;
+IPC144.url = "http:/www.senecacollege.ca/ipc";
+
+// Initializing ULI101 with some of the variables in the Object Prototype
+ULI101.code = "ULI101";
+ULI101.name = "Linux and the Internet";
+ULI101.hours = 4;
+ULI101.url = "http:/www.senecacollege.ca/lin";
+
+// Initializing IOS110 with some of the variables in the Object Prototype
+IOS110.code = "IOS110";
+IOS110.name = "Windows Operating System";
+IOS110.hours = 4;
+IOS110.url = "http:/www.senecacollege.ca/ios";
+
+// Initializing EAC150 with some of the variables in the Object Prototype
+EAC150.code = "EAC150";
+EAC150.name = "College English";
+EAC150.hours = 3;
+EAC150.url = null;
+
+// Creating an array and setting it to all the previously created variables of the Object prototype courseInfo
+var courses = [APC100, IPC144, ULI101, IOS110, EAC150];
+
+// Removing the last index of the array courses and setting it to a variable
+var removed = courses.pop();
+
+// Outputing message below
+console.log("The course that was removed was " + removed.name + " with the course code " + removed.code);
+console.log("This course has " + removed.hours + " hours with the url being: " + removed.url + "\n");
+
+//Creating 4 variables and setting them to the Object Prototype coursesInfo
+var BTP200 = Object.create(coursesInfo);
+var BTD210 = Object.create(coursesInfo);
+var BTI225 = Object.create(coursesInfo);
+var BTC240 = Object.create(coursesInfo);
+
+// Initializing BTP200 with some of the variables in the Object Prototype
+BTP200.code = "BTP200";
+BTP200.name = "The Object-Oriented Paradigm Using C++";
+BTP200.hours = 2.5;
+BTP200.url = "http:/www.senecacollege.ca/btp";
+
+// Initializing BTD210 with some of the variables in the Object Prototype
+BTD210.code = "BTD210";
+BTD210.name = "Database Design Principles";
+BTD210.hours = 3;
+BTD210.url = "http:/www.senecacollege.ca/btd";
+
+// Initializing BTI225 with some of the variables in the Object Prototype
+BTI225.code = "BTI225";
+BTI225.name = "Web Programming Principles";
+BTI225.hours = 2;
+BTI225.url = "http:/www.senecacollege.ca/bti";
+
+// Initializing BTC240 with some of the variables in the Object Prototype
+BTC240.code = "BTC240";
+BTC240.name = "Interpersonal Communications in Organizations";
+BTC240.hours = 2;
+BTC240.url = "http:/www.senecacollege.ca/btc";
+
+// Adding the 4 variables with the Object Prototypes to the courses array
+courses.push(BTP200);
+courses.push(BTD210);
+courses.push(BTI225);
+courses.push(BTC240);
+
+// Creating a variable and a for loop to capture all the hours of all the courses in the array
+var totalHours = 0;
+
+for(var i = 0; i < courses.length; i++){
+  totalHours += courses[i].hours;
+}
+
+// Outputting message below
+console.log("The total number of hours when combining all the hours of all the courses is " + totalHours + "\n");
+
+// *************** TASK 2 ***************
+// Creating an Object Prototype called Student
+var Student = {
+  name: "",
+  dob: new Date(),
+  sid: "",
+  program: "",
+  gpa: Number,
+  result: "",
+  toString: function(){
+    this.result += "Student info for " + this.name + " born on " + this.dob + ", id is " + this.sid + ", in program " + this.program + ",
+    with a current GPA of " + this.gpa + ".";
+    return this.result;
+  }
+}
+
+//Creating 4 variables and setting them to the Object Prototype Student
+var JohnK = Object.create(Student);
+var StevenY = Object.create(Student);
+var YasminA = Object.create(Student);
+var JuliaC = Object.create(Student);
+
+// Initializing JohnK with some of the variables in the Object Prototype
+JohnK.name = "John Kim";
+JohnK.dob = ("Apr 16, 1995");
+JohnK.sid = 1660232;
+JohnK.program = "Digital Art";
+JohnK.gpa = "3.7";
+
+// Initializing StevenY with some of the variables in the Object Prototype
+StevenY.name = "Steven Yami";
+StevenY.dob = ("July 04, 1998");
+StevenY.sid = 1567221;
+StevenY.program = "Computer Programming";
+StevenY.gpa = "3.2";
+
+// Initializing YasminA with some of the variables in the Object Prototype
+YasminA.name = "Yasmin Adravi";
+YasminA.dob = ("Sept 23, 2001");
+YasminA.sid = 1478592;
+YasminA.program = "Art Of Cooking";
+YasminA.gpa = "3.8";
+
+// Initializing JuliaC with some of the variables in the Object Prototype
+JuliaC.name = "Julia Carpen";
+JuliaC.dob = ("Dec 02, 2000");
+JuliaC.sid = 1723845;
+JuliaC.program = "Marine Biologist";
+JuliaC.gpa = "3.5";
+
+// Creating an array and setting it to all the previously created variables of the Object prototype Student
+var students = [JohnK, StevenY, YasminA, JuliaC];
+
+// Using the forEach method to print out all the elements in the array students by using the method toString that is inside the Student Object
+students.forEach(element => console.log(element.toString()));
